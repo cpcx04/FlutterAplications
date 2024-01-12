@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(130),
         child: Padding(
-          padding: EdgeInsets.only(top: 80),
+          padding: EdgeInsets.only(top: 60),
           child: Column(
             children: [
               Center(
@@ -19,7 +19,6 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height: 8), // Espaciado entre los textos
               Center(
                 child: Text(
                   "March 2020",
