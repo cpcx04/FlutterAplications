@@ -8,22 +8,20 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(130),
+        preferredSize: Size.fromHeight(160),
         child: Padding(
-          padding: EdgeInsets.only(top: 60),
+          padding: EdgeInsets.only(top: 60, left: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Text(
-                  "Best Iranian Actor and Actresses",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
+              Text(
+                "Best Iranian Actor and Actresses",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              Center(
-                child: Text(
-                  "March 2020",
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
-                ),
+              Text(
+                "March 2020",
+                style: TextStyle(fontSize: 16, color: Colors.grey),
+                textAlign: TextAlign.start,
               ),
             ],
           ),

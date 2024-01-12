@@ -19,8 +19,8 @@ class VerticalList extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 250,
-                    height: 400,
+                    width: 190,
+                    height: 396,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(124.0),
                       child: const Image(
@@ -31,8 +31,22 @@ class VerticalList extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text('Brad'),
-                  Text('Pitt')
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Brad',
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic),
+                      ),
+                      Text(
+                        'Pitt',
+                        style: TextStyle(fontSize: 14, color: Colors.grey),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
