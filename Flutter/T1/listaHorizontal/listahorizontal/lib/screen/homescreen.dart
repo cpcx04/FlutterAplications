@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:listahorizontal/widget/bottombar.dart';
 import 'package:listahorizontal/widget/verticallist.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,9 +10,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(160),
+        preferredSize: const Size.fromHeight(160),
         child: Padding(
-          padding: EdgeInsets.only(top: 60, left: 20),
+          padding: const EdgeInsets.only(top: 60, left: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -33,6 +34,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: const VerticalList(),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }

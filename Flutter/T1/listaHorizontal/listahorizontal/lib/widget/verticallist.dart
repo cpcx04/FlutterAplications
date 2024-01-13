@@ -7,7 +7,7 @@ class VerticalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 600,
+      height: 499,
       child: Padding(
         padding: EdgeInsets.only(bottom: 40),
         child: ListView(
