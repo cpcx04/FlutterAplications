@@ -56,6 +56,13 @@ class _ScoreScreenState extends State<ScoreScreen> {
     });
   }
 
+  void _reset() {
+    setState(() {
+      _visitante = 0;
+      _local = 0;
+    });
+  }
+
   void _changeMode() {
     setState(() {
       if (dark) {
@@ -347,6 +354,36 @@ class _ScoreScreenState extends State<ScoreScreen> {
                             )
                           ],
                         ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            children: [
+                              CustomButton(
+                                width: 350,
+                                backgroundColor:
+                                    sun ? Colors.white : Colors.black,
+                                isThreeD: true,
+                                height: 25,
+                                borderRadius: 25,
+                                animate: true,
+                                margin: const EdgeInsets.all(10),
+                                onPressed: () {
+                                  _reset();
+                                },
+                                child: Text("Reset",
+                                    style: GoogleFonts.dosis(
+                                        color:
+                                            dark ? Colors.white : Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15)),
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     )
                   ],
