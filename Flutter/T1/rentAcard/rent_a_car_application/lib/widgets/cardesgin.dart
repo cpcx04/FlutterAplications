@@ -18,7 +18,7 @@ class CardDesing extends StatefulWidget {
 
   final String imagenUrl;
 
-  final double precio;
+  final String precio;
   @override
   State<CardDesing> createState() => _CardDesingState();
 }
@@ -65,14 +65,14 @@ class _CardDesingState extends State<CardDesing> {
               ),
               Center(
                 child: Image.network(
-                  'https://www.motortrend.com/uploads/sites/10/2018/03/2019-chevrolet-corvette-stingray-1lt-targa-angular-front.png',
+                  widget.imagenUrl,
                   height: 200,
                   fit: BoxFit.cover,
                 ),
               ),
 
               // Modelo y precio al lado
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,13 +85,13 @@ class _CardDesingState extends State<CardDesing> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Corvette C7',
-                                style: TextStyle(
+                                '${widget.nombre} ${widget.modelo}',
+                                style: const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               Text(
-                                '2-3 puertas Corvete c7 Gasolina',
-                                style: TextStyle(
+                                '${widget.descripcion}',
+                                style: const TextStyle(
                                     color: Color.fromRGBO(120, 102, 102, 0.8)),
                               )
                             ],
@@ -112,14 +112,14 @@ class _CardDesingState extends State<CardDesing> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Column(
+                  Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 80,
                       ),
                       Text(
-                        '\$350',
-                        style: TextStyle(
+                        '\$${widget.precio}',
+                        style: const TextStyle(
                             fontSize: 18,
                             color: Color.fromARGB(255, 0, 105, 167)),
                       )

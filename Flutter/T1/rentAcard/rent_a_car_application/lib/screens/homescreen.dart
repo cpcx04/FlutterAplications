@@ -91,10 +91,50 @@ class HomeScreen extends StatelessWidget {
               nombre: "Corvette",
               modelo: "C7",
               descripcion: "2-3 PUERTAS Corvette c7 Gasolina",
-              precio: 350,
+              precio: "350",
               imagenUrl:
                   'https://www.motortrend.com/uploads/sites/10/2018/03/2019-chevrolet-corvette-stingray-1lt-targa-angular-front.png',
-            ))
+            )),
+        SizedBox(
+            width: double.infinity,
+            child: CardDesing(
+              nombre: "Ferrari",
+              modelo: "Portofino",
+              descripcion: "2 PUERTAS Ferrari Portofino Gasolina",
+              precio: "250",
+              imagenUrl:
+                  'https://cdn.ferrari.com/cms/network/media/img/resize/5f60fede966ae519cbd62beb-ferrari-portofino-m-design-hotspot-mob-new_3?',
+            )),
+        SizedBox(
+            width: double.infinity,
+            child: CardDesing(
+              nombre: "Nissan Skyline GTR",
+              modelo: "R8",
+              descripcion: "4 PUERTAS Skyline GTR Gasoil",
+              precio: "80",
+              imagenUrl:
+                  'https://i.seadn.io/gae/DEeP-8eJ2NK7gMfY7D6NdPRa1xwPBNX721GU3IQbFrBGG9BSOuUiF5Zp2tHj2MBDJb-y7QztbcQM_5jdAl--7cjWlXbtw82LqBCYpQ?auto=format&dpr=1&w=1000',
+            )),
+        SizedBox(
+            width: double.infinity,
+            child: CardDesing(
+              nombre: "Selby GT",
+              modelo: "500",
+              descripcion: "2 PUERTAS Shelby GT500 Gasolina",
+              precio: "550",
+              imagenUrl:
+                  'https://d2qldpouxvc097.cloudfront.net/image-by-path?bucket=a5-gallery-serverless-prod-chromebucket-1iz9ffi08lwxm&key=419348%2Ffront34%2Flg%2F9e1c2f',
+            )),
+        SizedBox(
+            width: double.infinity,
+            child: CardDesing(
+              nombre: "Mercedes Clase",
+              modelo: "G",
+              descripcion: "4 PUERTAS Mercedes Clase G Gasolina",
+              precio: "350",
+              imagenUrl:
+                  'https://www.enterprise.com/es/exotic-car-rental/vehicles/premium-luxury-suv/mercedes-benz-g-class/_jcr_content/root/teaser_image.coreimg.png/1667858337727/thumbnail-2020-mercedes-benz-g-class-2048x1360.png',
+            )),
       ]),
     );
   }
