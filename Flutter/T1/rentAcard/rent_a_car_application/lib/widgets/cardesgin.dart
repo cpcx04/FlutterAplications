@@ -93,6 +93,58 @@ class _CardDesingState extends State<CardDesing> {
                                 '${widget.descripcion}',
                                 style: const TextStyle(
                                     color: Color.fromRGBO(120, 102, 102, 0.8)),
+                              ),
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 8.0),
+                                        child: SizedBox(
+                                          width: 20,
+                                          child: Image.network(
+                                              'https://cdn-icons-png.flaticon.com/512/1820/1820633.png'),
+                                        ),
+                                      ),
+                                      const Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 8.0, top: 8.0),
+                                        child: Text('Man'),
+                                      ),
+                                      const Padding(
+                                        padding:
+                                            EdgeInsets.only(top: 8.0, left: 20),
+                                        child: Icon(Icons.severe_cold),
+                                      ),
+                                      const Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 8.0, top: 8.0),
+                                        child: Text('A/A'),
+                                      ),
+                                      const Padding(
+                                        padding:
+                                            EdgeInsets.only(top: 8.0, left: 20),
+                                        child: Icon(Icons.person),
+                                      ),
+                                      const Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 8.0, top: 8.0),
+                                        child: Text('4'),
+                                      ),
+                                      const Padding(
+                                        padding:
+                                            EdgeInsets.only(top: 8.0, left: 20),
+                                        child: Icon(Icons.cases),
+                                      ),
+                                      const Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 8.0, top: 8.0),
+                                        child: Text('1'),
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               )
                             ],
                           ),
