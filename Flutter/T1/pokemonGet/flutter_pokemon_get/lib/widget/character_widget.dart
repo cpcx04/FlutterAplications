@@ -43,7 +43,11 @@ class _PokemonState extends State<Pokemon> {
           return SizedBox(
             width: double.infinity,
             child: PokemonCard(
-                name: '${snapshot.data!.name}', height: snapshot.data.height),
+              name:
+                  '${snapshot.data!.name?[0].toUpperCase()}${snapshot.data!.name?.substring(1)}',
+              height: snapshot.data?.height,
+              imageUrl: snapshot.data?.sprites?.frontDefault,
+            ),
           );
         } else if (snapshot.hasError) {
           return Text('${snapshot.error}');

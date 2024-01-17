@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class PokemonCard extends StatelessWidget {
-  const PokemonCard(required String name, {super.key, required this.name, required this.height});
+  const PokemonCard(
+      {super.key,
+      required this.name,
+      required this.height,
+      required this.imageUrl});
 
   final String name;
-
-  final int height;
+  final int? height;
+  final String? imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -14,81 +18,62 @@ class PokemonCard extends StatelessWidget {
       child: SizedBox(
         child: Card(
           elevation: 5,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Image.network(
-                  'https://static.wikia.nocookie.net/espokemon/images/4/43/Bulbasaur.png/revision/latest?cb=20170120032346',
-                  height: 200,
-                  fit: BoxFit.cover,
-                ),
+          color: Colors.transparent,
+          child: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Color(0xFF0066CC), Color(0xFFFFCB05)],
               ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 12),
-                      child: Row(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '$name',
-                                style: const TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                              const Text(
-                                'Pica como un cabron',
-                                style: TextStyle(
-                                    color: Color.fromRGBO(120, 102, 102, 0.8)),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Column(
-                    children: [
-                      SizedBox(
-                        width: 80,
-                      ),
-                      Text(
-                        'Info',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Color.fromARGB(255, 0, 105, 167)),
-                      )
-                    ],
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                  child: Image.network(
+                    '$imageUrl',
+                    width: 500,
+                    height: 200,
+                    fit: BoxFit.cover,
                   ),
-                  Column(
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 8.0, bottom: 10, right: 30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ButtonBar(
-                        alignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: const Text('SELECCIONAR',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    color: Color.fromARGB(255, 0, 105, 167))),
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  name,
+                                  style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  'Height: $height ft',
+                                  style: const TextStyle(
+                                      color:
+                                          Color.fromRGBO(255, 255, 255, 0.8)),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
