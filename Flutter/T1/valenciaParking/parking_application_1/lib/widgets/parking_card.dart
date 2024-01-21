@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class ParkingCard extends StatefulWidget {
-  const ParkingCard({Key? key}) : super(key: key);
+class ParkingCard extends StatelessWidget {
+  const ParkingCard({Key? key, required this.nombre, required this.direccion})
+      : super(key: key);
 
-  @override
-  State<ParkingCard> createState() => _ParkingCardState();
-}
-
-class _ParkingCardState extends State<ParkingCard> {
+  final String nombre, direccion;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: SizedBox(
         child: Card(
+          color: Color.fromARGB(126, 0, 0, 0),
           semanticContainer: true,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           elevation: 0,
@@ -26,24 +25,25 @@ class _ParkingCardState extends State<ParkingCard> {
               Container(
                 color: Colors.black.withOpacity(0.3),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Nombre del Parking',
-                      style: TextStyle(
+                      nombre,
+                      style: GoogleFonts.caveat(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                        color: Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
                     Text(
-                      'Direccion',
-                      style: TextStyle(
-                        color: Color.fromARGB(179, 0, 0, 0),
+                      direccion,
+                      style: GoogleFonts.caveat(
+                        fontSize: 17,
+                        color: Color.fromARGB(179, 255, 255, 255),
                       ),
                     ),
                   ],
