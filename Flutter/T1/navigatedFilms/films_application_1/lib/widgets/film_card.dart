@@ -17,7 +17,7 @@ class FilmCard extends StatelessWidget {
             Column(
               children: [
                 SizedBox(
-                  height: 220,
+                  width: double.infinity,
                   child: Card(
                     semanticContainer: true,
                     clipBehavior: Clip.antiAlias,
@@ -33,27 +33,7 @@ class FilmCard extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            Column(
-              children: [
-                SizedBox(
-                  height: 220,
-                  child: Card(
-                    semanticContainer: true,
-                    clipBehavior: Clip.antiAlias,
-                    elevation: 0,
-                    child: Stack(
-                      children: [
-                        Image.network(
-                          'https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/los-idus-de-marzo/7055664-1-esl-ES/LOS-IDUS-DE-MARZO.jpg',
-                          fit: BoxFit.cover,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            )
           ],
         ),
       ),

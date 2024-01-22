@@ -1,6 +1,4 @@
-import 'dart:convert';
-
-import 'package:films_application_1/models/film_respose.dart';
+import 'package:films_application_1/models/film_response/film_response.dart';
 import 'package:films_application_1/widgets/film_card.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -10,8 +8,7 @@ Future<FilmResponse> fetchAlbum() async {
       'https://api.themoviedb.org/3/movie/popular?api_key=e3d23f2096498dbb777cd454a348e001'));
 
   if (response.statusCode == 200) {
-    return FilmResponse.fromJson(
-        json.decode(response.body) as Map<String, dynamic>);
+    return FilmResponse.fromJson(response.body);
   } else {
     throw Exception('No list found');
   }
@@ -49,9 +46,9 @@ class _FilmPageState extends State<FilmPage> {
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: ListView.builder(
-                itemCount: snapshot.data!.results.length,
+                itemCount: snapshot.data!.results!.length,
                 itemBuilder: (context, index) {
-                  final film = snapshot.data!.results[index];
+                  final film = snapshot.data!.results![index];
                   return FilmCard(
                     url: film.posterPath,
                   );
