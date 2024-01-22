@@ -76,7 +76,7 @@ class _NavigationExampleState extends State<NavigationExample> {
         ),
       ),
       body: <Widget>[
-        const FilmsPage(),
+        const FilmPage(),
         const ActorPage(),
       ][currentPageIndex],
     );
