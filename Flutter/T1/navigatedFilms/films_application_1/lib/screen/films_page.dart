@@ -36,7 +36,7 @@ class _FilmPageState extends State<FilmPage> {
       future: futureAlbum,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else if (!snapshot.hasData) {
@@ -45,12 +45,19 @@ class _FilmPageState extends State<FilmPage> {
           return SizedBox(
             child: Padding(
               padding: const EdgeInsets.all(20),
-              child: ListView.builder(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 20,
+                  mainAxisExtent: 320,
+                  crossAxisCount: 2, // Número de columnas (2 en este caso)
+                  mainAxisSpacing: 10.0, // Espacio vertical entre elementos
+                ),
                 itemCount: snapshot.data!.results!.length,
                 itemBuilder: (context, index) {
                   final film = snapshot.data!.results![index];
                   return FilmCard(
                     url: film.posterPath,
+                    filmName: film.title!,
                   );
                 },
               ),
