@@ -58,6 +58,7 @@ class _FilmPageState extends State<FilmPage> {
                   return FilmCard(
                     url: film.posterPath,
                     filmName: film.title!,
+                    rating: film.voteAverage!,
                   );
                 },
               ),
