@@ -44,7 +44,7 @@ class _FilmPageState extends State<FilmPage> {
         } else {
           return SizedBox(
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisSpacing: 20,

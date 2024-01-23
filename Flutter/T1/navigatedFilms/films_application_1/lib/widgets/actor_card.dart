@@ -25,7 +25,11 @@ class ActorCard extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                       Container(
-                        color: Colors.black.withOpacity(0.5),
+                        decoration: const BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                                colors: [Colors.black, Colors.transparent])),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.end,
