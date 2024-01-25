@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ActorCard extends StatelessWidget {
   const ActorCard({Key? key, required this.url, required this.actorName})
       : super(key: key);
 
   final String url, actorName;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,9 +22,13 @@ class ActorCard extends StatelessWidget {
                   height: 250,
                   child: Stack(
                     children: [
-                      Image.network(
-                        url,
+                      // Utiliza FadeInImage con transparent_image
+                      FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: url,
                         fit: BoxFit.cover,
+                        width: double.infinity,
+                        height: double.infinity,
                       ),
                       Container(
                         decoration: const BoxDecoration(

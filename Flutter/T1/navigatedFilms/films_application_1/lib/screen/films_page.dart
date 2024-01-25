@@ -59,6 +59,8 @@ class _FilmPageState extends State<FilmPage> {
                     url: film.posterPath,
                     filmName: film.title!,
                     rating: film.voteAverage!,
+                    movieId: film.id!,
+                    loading: false,
                   );
                 },
               ),
