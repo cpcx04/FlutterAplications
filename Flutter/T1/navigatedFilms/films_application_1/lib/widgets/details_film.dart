@@ -1,4 +1,4 @@
-import 'package:films_application_1/widgets/video_list.dart';
+import 'package:films_application_1/widgets/videos/video_item.dart';
 import 'package:flutter/material.dart';
 
 class DetailsWidget extends StatelessWidget {
@@ -34,9 +34,7 @@ class DetailsWidget extends StatelessWidget {
                 style: const TextStyle(fontSize: 16),
               ),
             ),
-            Column(
-              children: [VideoList()],
-            )
+            VideoListWidget()
           ],
         ),
       ),
