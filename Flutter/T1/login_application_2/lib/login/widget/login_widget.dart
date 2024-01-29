@@ -30,7 +30,8 @@ class _LoginWidgetState extends State<LoginWidget> {
         ),
         ElevatedButton(
           onPressed: () {
-            // Handle login logic here
+            shareWithLogin(
+                _usernameController.toString(), _passwordController.toString());
           },
           child: const Text('Login'),
         ),
